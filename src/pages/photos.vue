@@ -4,13 +4,7 @@
         <v-main class="d-flex align-center justify-center">
             <v-container>
                 <v-sheet border="dashed md" color="surface-light" rounded="lg" width="100%">
-                    <v-card :color="color" :variant="variant" class="mx-auto" hover prepend-icon="mdi-image-multiple">
-                        <v-card-title>
-                            相册
-                        </v-card-title>
-                        <v-card-text>
-                            来看看班级照片吧！
-                        </v-card-text>
+                    <v-card :color="color" :variant="variant" class="mx-auto" hover>
                         <v-carousel cycle show-arrows="hover">
                             <v-carousel-item src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
                                 cover></v-carousel-item>
@@ -18,9 +12,6 @@
                             <v-carousel-item src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
                                 cover></v-carousel-item>
                         </v-carousel>
-                        <v-card-actions>
-                            <v-btn color="info" href="/photo">进入相册</v-btn>
-                        </v-card-actions>
                     </v-card>
                 </v-sheet>
             </v-container>
