@@ -141,7 +141,7 @@ const recognize = async () => {
   try {
     // 获取 Base64 图像
     const imageBase64 = canvas.value.toDataURL('image/png');
-
+    //console.log(imageBase64)
     const response = await fetch('https://api.202718.xyz/api/predict', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -154,7 +154,7 @@ const recognize = async () => {
 
     const result = await response.json();
     prediction.value = result.prediction;
-    potencial.value = result.potencial;
+    potencial.value = result.probabilities;
   } catch (err) {
     console.error('识别失败:', err);
     error.value = '识别失败，请重试或检查网络连接';
