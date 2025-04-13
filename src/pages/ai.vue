@@ -2,16 +2,18 @@
   <v-layout class="rounded rounded-md border">
     <naga></naga>
     <v-main class="d-flex align-center justify-center">
-      <v-container>
+      <v-container class="d-flex align-center justify-center flex-column">
         <h1>手写数字识别</h1>
         <canvas ref="canvas" width="280" height="280"
           style="border: 1px solid black; image-rendering: pixelated; touch-action: none;background-color: white;"
           @mousedown="startDrawing" @mousemove="draw" @mouseup="stopDrawing" @touchstart="handleTouchStart"
           @touchmove="handleTouchMove" @touchend="stopDrawing"></canvas>
         <br>
-        <v-btn color="success" @click="clearCanvas">清空画布</v-btn>
-        <v-btn color="success" :disabled="isRecognizing" @click="recognize">{{ isRecognizing ? '识别中...' : '识别数字'
-        }}</v-btn>
+        <div>
+          <v-btn color="success" @click="clearCanvas">清空画布</v-btn>
+          <v-btn color="success" :disabled="isRecognizing" @click="recognize">{{ isRecognizing ? '识别中...' : '识别数字'
+          }}</v-btn>
+        </div>
         <div v-if="prediction !== null" class="result">
           识别结果: <strong>{{ prediction }}</strong>
         </div>
